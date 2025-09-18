@@ -1,0 +1,41 @@
+{"timestamp": "2025-09-07T12:27:26.425598", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-07T12:27:26.425598", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "error", "error": "/home/dateria/.venvs/llm/bin/python: can't open file '/home/dateria/project/evidence_core_verify.py': [Errno 2] No such file or directory\n"}
+{"timestamp": "2025-09-07T12:29:50.804919", "user_id": "test_user", "chat_id": "test_chat", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-07T12:29:50.804919", "user_id": "test_user", "chat_id": "test_chat", "verification_type": "phase2", "status": "completed", "success": true, "duration": 0.0574953556060791}
+{"timestamp": "2025-09-07T12:32:40.830782", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-07T12:32:40.830782", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "error", "error": "/home/dateria/.venvs/llm/bin/python: can't open file '/home/dateria/project/evidence_core_verify.py': [Errno 2] No such file or directory\n"}
+{"timestamp": "2025-09-07T12:33:29.332175", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-07T12:33:29.332175", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 0.053467512130737305}
+{"timestamp": "2025-09-07T12:40:29.514488", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-11T07:52:45.767466", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-11T07:52:45.767466", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": false, "duration": 66.37668514251709}
+{"timestamp": "2025-09-11T08:03:31.988584", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-11T08:03:31.988584", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": false, "duration": 67.03454899787903}
+{"timestamp": "2025-09-11T12:49:25.220011", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-11T12:49:25.220011", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": false, "duration": 67.5862307548523}
+{"timestamp": "2025-09-11T12:52:56.520062", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-11T12:52:56.520062", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": false, "duration": 67.40665864944458}
+{"timestamp": "2025-09-11T13:12:16.820383", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-11T13:12:16.820383", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 67.3676655292511}
+{"timestamp": "2025-09-11T13:24:39.823334", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-11T13:24:39.823334", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 67.15101170539856}
+{"timestamp": "2025-09-11T15:52:23.661757", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-11T15:52:23.661757", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 67.23012518882751}
+{"timestamp": "2025-09-12T13:31:06.513585", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-12T13:31:06.513585", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 68.61957597732544}
+{"timestamp": "2025-09-12T15:56:55.375339", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-12T15:56:55.375339", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 64.42748808860779}
+{"timestamp": "2025-09-12T16:03:59.617267", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-12T16:03:59.617267", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 64.53100752830505}
+{"timestamp": "2025-09-12T16:10:40.858054", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-12T16:10:40.858054", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 64.5290048122406}
+{"timestamp": "2025-09-12T18:28:17.131446", "user_id": "6520801941", "chat_id": "6520801941", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-12T18:28:17.131446", "user_id": "6520801941", "chat_id": "6520801941", "verification_type": "phase2", "status": "completed", "success": true, "duration": 64.26081204414368}
+{"timestamp": "2025-09-13T03:20:23.296550", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-13T03:20:23.296550", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 65.89105892181396}
+{"timestamp": "2025-09-13T03:47:58.082122", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-13T03:47:58.082122", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 66.49826121330261}
+{"timestamp": "2025-09-13T04:30:52.964154", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-13T04:30:52.964154", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 66.37544274330139}
+{"timestamp": "2025-09-16T12:19:58.288991", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "started"}
+{"timestamp": "2025-09-16T12:19:58.288991", "user_id": "5935892442", "chat_id": "5935892442", "verification_type": "phase2", "status": "completed", "success": true, "duration": 69.57672500610352}

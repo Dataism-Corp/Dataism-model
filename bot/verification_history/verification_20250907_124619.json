@@ -1,0 +1,127 @@
+{
+  "timestamp": "2025-09-07T12:46:19.886854",
+  "verification_type": "universal",
+  "verifier_version": "2.0.0",
+  "summary": {
+    "total_tests": 9,
+    "passed_tests": 8,
+    "success_rate": 88.88888888888889,
+    "overall_status": "VERIFIED_FAIL",
+    "phase_breakdown": {
+      "2": {
+        "total": 9,
+        "passed": 8
+      }
+    }
+  },
+  "results": [
+    {
+      "name": "File_Structure",
+      "phase": 2,
+      "status": "PASS",
+      "confidence": 1.0,
+      "details": "Files checked: 6, Missing: 0",
+      "evidence_id": "File_Structure_2_1757274116255",
+      "evidence_hash": "5b45c2e5c60bcb5c2afbdd6538e2a06e4c20259ce322be2121fbe96e95b8e3d2",
+      "verifier_signature": "7b4b79291d777063abb374ebddfa4f0de39b3a830ce975a911d5c3e49f1e63c9",
+      "violations": [],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 8b945ef9b5b2c989...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ...\nDatabase table verified: memory\nDatabase table verified: cache\nDatabase table verified: sessions\nDatabase table verified: routing_logs"
+    },
+    {
+      "name": "Database_Schema",
+      "phase": 2,
+      "status": "PASS",
+      "confidence": 1.0,
+      "details": "Tables found: 4, Required: 4",
+      "evidence_id": "Database_Schema_2_1757274116262",
+      "evidence_hash": "1c28c3c296ae2ed1a5db72e59b469a1d09a70bfe5a50093cea899e77aeb6127c",
+      "verifier_signature": "ef4382d2f423a6e6635044fec1bf1933b2961eacf383c239d484897939abfcf9",
+      "violations": [],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 8b945ef9b5b2c989...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ...\nDatabase table verified: memory\nDatabase table verified: cache\nDatabase table verified: sessions\nDatabase table verified: routing_logs"
+    },
+    {
+      "name": "Routing_Logic",
+      "phase": 2,
+      "status": "PASS",
+      "confidence": 1.0,
+      "details": "Test cases: 3, Passed: 3",
+      "evidence_id": "Routing_Logic_2_1757274116264",
+      "evidence_hash": "24363a839897e7f288ef284caed4d4731332b1a6dee42c07c3c256d2168fb759",
+      "verifier_signature": "9266c60716ff90a2a20820b668f94e0c8e546f57d2b4582c65b666de33fc18e4",
+      "violations": [],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 8b945ef9b5b2c989...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ...\nDatabase table verified: memory\nDatabase table verified: cache\nDatabase table verified: sessions\nDatabase table verified: routing_logs"
+    },
+    {
+      "name": "Response_Cleaning",
+      "phase": 2,
+      "status": "PASS",
+      "confidence": 1.0,
+      "details": "Cleaning cases: 4, Passed: 4",
+      "evidence_id": "Response_Cleaning_2_1757274116266",
+      "evidence_hash": "947ec32743ad785fd1c44d77f0db6cb70f3a2554ffda20b9b69ef833d5dab773",
+      "verifier_signature": "2e104ba8992b3bd58fd54c6ad7a44a456a1a43a3ed756863e8d61d93573f7268",
+      "violations": [],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 8b945ef9b5b2c989...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ...\nDatabase table verified: memory\nDatabase table verified: cache\nDatabase table verified: sessions\nDatabase table verified: routing_logs"
+    },
+    {
+      "name": "API_Structure",
+      "phase": 2,
+      "status": "PASS",
+      "confidence": 1.0,
+      "details": "Endpoints found: 3/3",
+      "evidence_id": "API_Structure_2_1757274116268",
+      "evidence_hash": "19c981f3a5854f31dc52c38d99668c1d33efeff0e990b8d367268340bf647d45",
+      "verifier_signature": "e7135038cde70d4de784143b070853390654df5ae42e9862017907c5807e0cff",
+      "violations": [],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 8b945ef9b5b2c989...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ...\nDatabase table verified: memory\nDatabase table verified: cache\nDatabase table verified: sessions\nDatabase table verified: routing_logs"
+    },
+    {
+      "name": "Telegram_Bot",
+      "phase": 2,
+      "status": "PASS",
+      "confidence": 1.0,
+      "details": "Bot validation passed: 5 commands, verification integrated",
+      "evidence_id": "Telegram_Bot_2_1757274116270",
+      "evidence_hash": "0f933a6a368f784230c8278342d13432edb1b7e322d7910245a2d35a291c6667",
+      "verifier_signature": "f6cf2c941a5d7b9b03c80a8f5d86933ba57b5c7efdcf315d181faf8777320e48",
+      "violations": [],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 8b945ef9b5b2c989...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ...\nDatabase table verified: memory\nDatabase table verified: cache\nDatabase table verified: sessions\nDatabase table verified: routing_logs"
+    },
+    {
+      "name": "Command_Routing",
+      "phase": 2,
+      "status": "PASS",
+      "confidence": 1.0,
+      "details": "Routing passed: 5/5 handlers, score: 0.85",
+      "evidence_id": "Command_Routing_2_1757274116272",
+      "evidence_hash": "bb6fa56ae105d2196e6da2f77ed5478721031b72a69febe3f7de920d7972159a",
+      "verifier_signature": "332177ef13469b5cec8fee21c729ee895e6d72f84a7383f4d713dba1132089d4",
+      "violations": [],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 8b945ef9b5b2c989...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ...\nDatabase table verified: memory\nDatabase table verified: cache\nDatabase table verified: sessions\nDatabase table verified: routing_logs"
+    },
+    {
+      "name": "Live_Bot_Testing",
+      "phase": 2,
+      "status": "PASS",
+      "confidence": 1.0,
+      "details": "Live bot testing passed: 4/4 commands responded correctly",
+      "evidence_id": "Live_Bot_Testing_2_1757274116275",
+      "evidence_hash": "10633e89583258e381c6919926593b8a08f8745fb5bb924f201524ff433ce6c0",
+      "verifier_signature": "693253d0f2add0d93bb14fe28f712d814a0eaa4d8f0dde88083f8dbca12a3691",
+      "violations": [],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 8b945ef9b5b2c989...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ...\nDatabase table verified: memory\nDatabase table verified: cache\nDatabase table verified: sessions\nDatabase table verified: routing_logs"
+    },
+    {
+      "name": "Real_Response_Cleaning",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 1.0,
+      "details": "Real cleaning failed: 10/12 cases. First failure: 'vertex = stack.pop()ifvertexnotinvisited' -> 'vertex = stack. pop() ifvertexnotinvisited' (expected",
+      "evidence_id": "Real_Response_Cleaning_2_1757274116278",
+      "evidence_hash": "499d7a298cb84cfc85c26186d5e3fd0d53c39885188900651360b802ee63748e",
+      "verifier_signature": "afb535f6be3f1628f268c5fa4fdd4fddfbb38b67c8b1cd593dc2709e7b66918c",
+      "violations": [],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 8b945ef9b5b2c989...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ...\nDatabase table verified: memory\nDatabase table verified: cache\nDatabase table verified: sessions\nDatabase table verified: routing_logs"
+    }
+  ]
+}

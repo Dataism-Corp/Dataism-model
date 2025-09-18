@@ -1,0 +1,57 @@
+{
+  "test_name": "Database_Schema",
+  "test_id": "Database_Schema_2_1757275111965",
+  "phase": 2,
+  "timestamp": "2025-09-07T12:58:31.967618",
+  "duration": 0.0016438961029052734,
+  "stdout": "Test started: Database_Schema\nSystem state captured at 2025-09-07T12:58:31.967555\nTest completed: PASS\nDetails: Tables found: 4, Required: 4",
+  "stderr": "",
+  "exit_code": 0,
+  "exception_trace": null,
+  "system_info": {
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python_version": "3.11.0rc1",
+    "architecture": [
+      "64bit",
+      "ELF"
+    ],
+    "hostname": "DESKTOP-JF1IJKS",
+    "timestamp": "2025-09-07T12:58:31.967313",
+    "working_directory": "/home/dateria/project",
+    "project_root": "/home/dateria/project"
+  },
+  "file_hashes": {
+    "main_api.py": "2bd824f1803fc44a9fd1dfa696ab17eeb5e951982224642907d3c8cdff6c5506",
+    "bots/telegram_bot.py": "8b945ef9b5b2c989b96efb2a15e0572a9c4fdbe578773606de18dc893c6d8268",
+    "rag_store.py": "ecc16e8d12076aa90d7a41dc0bf09e2d5843c017a284e80788fbd3e229c60c49",
+    "model_chat.py": "154d678a18d676e8f4fd3b148ec6dc9da687339523617c47e3487323c67f1d12",
+    "model_code.py": "ca8b940f0729b5218ddb47714b91c06c6865d5c374a587c7bfa3973a07f2f085",
+    "memory.db": "35ea073bddb329e7cca31fb31e274d2d9218f81ecab9deb698aaef1272c19cfa"
+  },
+  "database_state": {
+    "status": "OK",
+    "tables": [
+      "memory",
+      "cache",
+      "sessions",
+      "routing_logs"
+    ],
+    "row_counts": {
+      "memory": 0,
+      "cache": 0,
+      "sessions": 10,
+      "routing_logs": 2
+    },
+    "file_size": 28672
+  },
+  "test_artifacts": {
+    "test_result": {
+      "success": true,
+      "details": "Tables found: 4, Required: 4",
+      "test_function": "_test_database_schema"
+    }
+  },
+  "screenshots": [],
+  "verifier_version": "2.0.0",
+  "evidence_hash": "334ecf7f9e3ce7d0c75f6c7569373a399ebbd14583f7d01d700665587ea32e8c"
+}

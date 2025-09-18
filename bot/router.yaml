@@ -1,0 +1,11 @@
+overrides:
+  force_chat: []
+  force_code: []
+rules:
+  code_regex:
+    - "```"
+    - "\\b(def|class)\\b"
+    - "\\b(SELECT|INSERT|UPDATE|DELETE)\\b"
+    - "\\b(function|var|let|const|=>)\\b"
+thresholds:
+  min_tokens_for_code: 6

@@ -1,0 +1,57 @@
+{
+  "test_name": "Command_Routing",
+  "test_id": "Command_Routing_2_1757726897169",
+  "phase": 2,
+  "timestamp": "2025-09-12T21:28:17.172045",
+  "duration": 0.002476930618286133,
+  "stdout": "Test started: Command_Routing\nSystem state captured at 2025-09-12T21:28:17.170831\nTest completed: PASS\nDetails: Routing passed: 4/4 handlers, score: 0.97",
+  "stderr": "",
+  "exit_code": 0,
+  "exception_trace": null,
+  "system_info": {
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python_version": "3.11.0rc1",
+    "architecture": [
+      "64bit",
+      "ELF"
+    ],
+    "hostname": "DESKTOP-JF1IJKS",
+    "timestamp": "2025-09-12T21:28:17.170566",
+    "working_directory": "/home/dateria/project",
+    "project_root": "/home/dateria/project"
+  },
+  "file_hashes": {
+    "main_api.py": "86504e128b4ea51539e9e6936f29f0c44d0eb5e7ee373a537d292e099fae2e6e",
+    "bots/telegram_bot.py": "c29340237fb56ed38ab1d13e03c885e8d8f0bbf7c27160ad8d0f5c76ddb2932c",
+    "rag_store.py": "ecc16e8d12076aa90d7a41dc0bf09e2d5843c017a284e80788fbd3e229c60c49",
+    "model_chat.py": "b9d609dc76ef82c50fca895e5fd2e18fc3f648ef082eefad0edddf4cf7820f6f",
+    "model_code.py": "fa46544b2f422fa9234f526000ef476b3dfe5541f404ba0054a022f7b5a962af",
+    "memory.db": "7564eeccc4cb66da9c6255306d414b6a1de2788580a53eab0de248ae66c39dc8"
+  },
+  "database_state": {
+    "status": "OK",
+    "tables": [
+      "sessions",
+      "memory",
+      "cache",
+      "routing_logs"
+    ],
+    "row_counts": {
+      "sessions": 22,
+      "memory": 9,
+      "cache": 2,
+      "routing_logs": 24
+    },
+    "file_size": 102400
+  },
+  "test_artifacts": {
+    "test_result": {
+      "success": true,
+      "details": "Routing passed: 4/4 handlers, score: 0.97",
+      "test_function": "_test_command_routing"
+    }
+  },
+  "screenshots": [],
+  "verifier_version": "2.0.0",
+  "evidence_hash": "544281225a3860b928998f0d3568538af8f6c40d0f81fc2244c1dce767469d06"
+}

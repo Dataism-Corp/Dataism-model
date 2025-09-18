@@ -1,0 +1,57 @@
+{
+  "test_name": "File_Structure",
+  "test_id": "File_Structure_2_1757760478111",
+  "phase": 2,
+  "timestamp": "2025-09-13T06:47:58.115064",
+  "duration": 0.0037360191345214844,
+  "stdout": "Test started: File_Structure\nSystem state captured at 2025-09-13T06:47:58.115035\nTest completed: PASS\nDetails: Files checked: 6, Missing: 0",
+  "stderr": "",
+  "exit_code": 0,
+  "exception_trace": null,
+  "system_info": {
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python_version": "3.11.0rc1",
+    "architecture": [
+      "64bit",
+      "ELF"
+    ],
+    "hostname": "DESKTOP-JF1IJKS",
+    "timestamp": "2025-09-13T06:47:58.114565",
+    "working_directory": "/home/dateria/project",
+    "project_root": "/home/dateria/project"
+  },
+  "file_hashes": {
+    "main_api.py": "86504e128b4ea51539e9e6936f29f0c44d0eb5e7ee373a537d292e099fae2e6e",
+    "bots/telegram_bot.py": "d0c5af9548cefdc1ba1b6e2f6f7c89eed51c4e7ecfddc8ffa85bf57b4e1de5fe",
+    "rag_store.py": "ecc16e8d12076aa90d7a41dc0bf09e2d5843c017a284e80788fbd3e229c60c49",
+    "model_chat.py": "b9d609dc76ef82c50fca895e5fd2e18fc3f648ef082eefad0edddf4cf7820f6f",
+    "model_code.py": "fa46544b2f422fa9234f526000ef476b3dfe5541f404ba0054a022f7b5a962af",
+    "memory.db": "40474af972006ca82e37d527774efa1d23d660a00a88a75ed86ff34fc8274c64"
+  },
+  "database_state": {
+    "status": "OK",
+    "tables": [
+      "sessions",
+      "memory",
+      "cache",
+      "routing_logs"
+    ],
+    "row_counts": {
+      "sessions": 28,
+      "memory": 9,
+      "cache": 2,
+      "routing_logs": 29
+    },
+    "file_size": 106496
+  },
+  "test_artifacts": {
+    "test_result": {
+      "success": true,
+      "details": "Files checked: 6, Missing: 0",
+      "test_function": "_test_file_structure"
+    }
+  },
+  "screenshots": [],
+  "verifier_version": "2.0.0",
+  "evidence_hash": "d5bb4d19037b5ec65c5044300b2c96674e001bd1c913f44b3526972a584fc1cc"
+}

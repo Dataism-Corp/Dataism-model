@@ -1,0 +1,272 @@
+{
+  "phase2_core": {
+    "description": "Phase 2 core functionality verification rules",
+    "required_files": [
+      {
+        "path": "main_api.py",
+        "min_size": 1000,
+        "description": "FastAPI server implementation"
+      },
+      {
+        "path": "bots/telegram_bot.py",
+        "min_size": 5000,
+        "description": "Telegram bot with routing system"
+      },
+      {
+        "path": "rag_store.py",
+        "min_size": 2000,
+        "description": "RAG storage and retrieval system"
+      },
+      {
+        "path": "model_chat.py",
+        "min_size": 1000,
+        "description": "Chat model interface"
+      },
+      {
+        "path": "model_code.py",
+        "min_size": 1000,
+        "description": "Code generation model interface"
+      },
+      {
+        "path": "tools/apis.py",
+        "min_size": 2000,
+        "description": "API integration tools"
+      },
+      {
+        "path": "tools/kill.py",
+        "min_size": 100,
+        "description": "Kill switch implementation"
+      }
+    ],
+    "required_db_tables": [
+      {
+        "name": "memory",
+        "description": "RAG document storage",
+        "required_columns": ["id", "session_id", "content", "emb"]
+      },
+      {
+        "name": "cache",
+        "description": "API response caching",
+        "required_columns": ["key", "payload", "ttl"]
+      },
+      {
+        "name": "sessions",
+        "description": "Chat session storage",
+        "required_columns": ["session_id", "role", "content"]
+      },
+      {
+        "name": "routing_logs",
+        "description": "Smart routing analytics",
+        "required_columns": ["user_text", "selected_tool", "confidence"]
+      }
+    ],
+    "required_api_endpoints": [
+      {
+        "path": "/v1/chat/completions",
+        "method": "POST",
+        "description": "OpenAI-compatible chat completions"
+      },
+      {
+        "path": "/health",
+        "method": "GET",
+        "description": "Health check endpoint"
+      },
+      {
+        "path": "/tools/search",
+        "method": "GET",
+        "description": "Web search tool endpoint"
+      },
+      {
+        "path": "/tools/kill",
+        "method": "POST",
+        "description": "Kill switch activation"
+      }
+    ],
+    "routing_test_cases": [
+      {
+        "input": "Search capital of India",
+        "expected_tool": "web_search",
+        "min_confidence": 0.8,
+        "description": "Explicit search command should route to web search"
+      },
+      {
+        "input": "wiki python programming",
+        "expected_tool": "wiki",
+        "min_confidence": 0.8,
+        "description": "Wikipedia keyword should route to wiki tool"
+      },
+      {
+        "input": "find information about AI",
+        "expected_tool": "web_search", 
+        "min_confidence": 0.7,
+        "description": "Search terms should route to web search"
+      },
+      {
+        "input": "What is 2+2?",
+        "expected_tool": "none",
+        "min_confidence": 0.6,
+        "description": "Simple questions should route to chat"
+      }
+    ],
+    "response_cleaning_cases": [
+      {
+        "input": "ASSISTANT: Hello world",
+        "expected_clean": "Hello world",
+        "description": "Remove ASSISTANT prefix"
+      },
+      {
+        "input": "SYSTEM: The answer is 42",
+        "expected_clean": "The answer is 42",
+        "description": "Remove SYSTEM prefix"
+      },
+      {
+        "input": "USER: Assistant: Hello there",
+        "expected_clean": "Hello there",
+        "description": "Remove nested prefixes"
+      },
+      {
+        "input": "TheCapitalOfIndia",
+        "expected_clean": "The Capital Of India",
+        "description": "Fix camelCase spacing"
+      }
+    ],
+    "telegram_bot_commands": [
+      {
+        "command": "/start",
+        "description": "Bot initialization and welcome message",
+        "expected_response_contains": ["Welcome", "Hello", "Hi"],
+        "should_respond": true
+      },
+      {
+        "command": "/help",
+        "description": "Display available commands",
+        "expected_response_contains": ["commands", "help"],
+        "should_respond": true
+      },
+      {
+        "command": "/verify",
+        "description": "Run verification system",
+        "expected_response_contains": ["verification", "test", "evidence"],
+        "should_respond": true
+      },
+      {
+        "command": "/evidence",
+        "description": "Get evidence bundle information",
+        "expected_response_contains": ["bundle", "evidence", "usage"],
+        "should_respond": true
+      },
+      {
+        "command": "/status",
+        "description": "System status check",
+        "expected_response_contains": ["status", "system"],
+        "should_respond": true
+      }
+    ],
+    "telegram_bot_requirements": {
+      "required_imports": ["telebot", "os", "json", "requests"],
+      "required_handlers": ["message_handler", "commands"],
+      "required_functions": ["safe_send", "handle_verify"],
+      "min_commands": 5,
+      "verification_integration": true
+    },
+    "command_routing_requirements": {
+      "required_command_handlers": [
+        {
+          "command": "/start", 
+          "handler_function": "handle_start",
+          "response_type": "welcome_message",
+          "error_handling": true
+        },
+        {
+          "command": "/help",
+          "handler_function": "handle_help", 
+          "response_type": "command_list",
+          "error_handling": true
+        },
+        {
+          "command": "/verify",
+          "handler_function": "handle_verify",
+          "response_type": "verification_result",
+          "error_handling": true,
+          "integration_required": "verification_bot"
+        },
+        {
+          "command": "/evidence", 
+          "handler_function": "handle_evidence",
+          "response_type": "evidence_info",
+          "error_handling": true
+        },
+        {
+          "command": "/status",
+          "response_type": "system_status",
+          "error_handling": true
+        }
+      ],
+      "routing_requirements": {
+        "min_success_rate": 0.8,
+        "error_handling_coverage": 0.7,
+        "verification_integration": true,
+        "response_validation": true
+      }
+    }
+  },
+  "system_invariants": {
+    "description": "System-wide invariants that must always hold",
+    "max_test_duration": 300,
+    "required_python_version": "3.8",
+    "min_available_memory": 1000000000,
+    "allowed_exit_codes": [0],
+    "required_environment_vars": [
+      "TELEGRAM_BOT_TOKEN",
+      "BEARER_TOKEN"
+    ],
+    "critical_processes": [
+      {
+        "name": "telegram_bot",
+        "description": "Telegram bot process should be responsive"
+      },
+      {
+        "name": "api_server", 
+        "description": "FastAPI server should be accessible"
+      }
+    ],
+    "performance_thresholds": {
+      "api_response_time_ms": 5000,
+      "db_query_time_ms": 1000,
+      "model_inference_time_ms": 30000
+    }
+  },
+  "payment_criteria": {
+    "description": "Criteria for payment release authorization",
+    "phase2_requirements": {
+      "core_tests_pass_rate": 100.0,
+      "evidence_bundles_required": true,
+      "independent_verification_required": true,
+      "minimum_confidence_score": 0.8,
+      "required_test_categories": [
+        "file_structure",
+        "database_schema", 
+        "routing_logic",
+        "response_cleaning",
+        "api_structure"
+      ]
+    },
+    "evidence_requirements": {
+      "file_hashes_required": true,
+      "system_state_required": true,
+      "execution_logs_required": true,
+      "verification_signature_required": true,
+      "audit_trail_required": true
+    }
+  },
+  "audit_settings": {
+    "retention_days": 90,
+    "evidence_backup_required": true,
+    "verification_log_level": "detailed",
+    "hash_algorithm": "sha256",
+    "timestamp_format": "iso8601_utc"
+  },
+  "version": "1.0.0",
+  "created": "2025-09-07T00:00:00Z",
+  "last_updated": "2025-09-07T00:00:00Z"
+}

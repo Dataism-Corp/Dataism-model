@@ -1,0 +1,57 @@
+{
+  "test_name": "API_Structure",
+  "test_id": "API_Structure_2_1758050398328",
+  "phase": 2,
+  "timestamp": "2025-09-16T15:19:58.330177",
+  "duration": 0.0012624263763427734,
+  "stdout": "Test started: API_Structure\nSystem state captured at 2025-09-16T15:19:58.330145\nTest completed: PASS\nDetails: Endpoints found: 3/3",
+  "stderr": "",
+  "exit_code": 0,
+  "exception_trace": null,
+  "system_info": {
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python_version": "3.11.0rc1",
+    "architecture": [
+      "64bit",
+      "ELF"
+    ],
+    "hostname": "DESKTOP-JF1IJKS",
+    "timestamp": "2025-09-16T15:19:58.329825",
+    "working_directory": "/home/dateria/project",
+    "project_root": "/home/dateria/project"
+  },
+  "file_hashes": {
+    "main_api.py": "86504e128b4ea51539e9e6936f29f0c44d0eb5e7ee373a537d292e099fae2e6e",
+    "bots/telegram_bot.py": "d0c5af9548cefdc1ba1b6e2f6f7c89eed51c4e7ecfddc8ffa85bf57b4e1de5fe",
+    "rag_store.py": "ecc16e8d12076aa90d7a41dc0bf09e2d5843c017a284e80788fbd3e229c60c49",
+    "model_chat.py": "b9d609dc76ef82c50fca895e5fd2e18fc3f648ef082eefad0edddf4cf7820f6f",
+    "model_code.py": "fa46544b2f422fa9234f526000ef476b3dfe5541f404ba0054a022f7b5a962af",
+    "memory.db": "1229cb185905704e643130ddf2f9a524f0f11faa293b8fdbe1963ca9b784b32e"
+  },
+  "database_state": {
+    "status": "OK",
+    "tables": [
+      "sessions",
+      "memory",
+      "cache",
+      "routing_logs"
+    ],
+    "row_counts": {
+      "sessions": 36,
+      "memory": 29,
+      "cache": 6,
+      "routing_logs": 40
+    },
+    "file_size": 221184
+  },
+  "test_artifacts": {
+    "test_result": {
+      "success": true,
+      "details": "Endpoints found: 3/3",
+      "test_function": "_test_api_structure"
+    }
+  },
+  "screenshots": [],
+  "verifier_version": "2.0.0",
+  "evidence_hash": "ee2d5284cc52f661de74232e1ef5f777150d0bd8d2b62087137199079c299f9d"
+}

@@ -1,0 +1,108 @@
+[
+  {
+    "id": "cbaf5a47-6b21-4772-b00f-1a352aa2a9b3",
+    "action": "run",
+    "args": {
+      "cmd": "notepad.exe"
+    },
+    "requested_by": 5935892442,
+    "status": "pending",
+    "ts": "2025-08-30T22:30:08.108970"
+  },
+  {
+    "id": "e31e7c3a-006e-4cda-a228-f5c28afce390",
+    "action": "run",
+    "args": {
+      "cmd": "whoami"
+    },
+    "requested_by": 5935892442,
+    "status": "pending",
+    "ts": "2025-08-30T22:42:46.135963"
+  },
+  {
+    "id": "32a9d490-dade-47f7-8c5a-52eaf1c59ded",
+    "action": "run=notepad.exe",
+    "args": {},
+    "requested_by": 5935892442,
+    "status": "pending",
+    "ts": "2025-08-31T16:15:16.727635"
+  },
+  {
+    "id": "6bd89520-b446-4bd0-a630-83260c7ac148",
+    "action": "hello",
+    "args": {},
+    "requested_by": 5935892442,
+    "status": "pending",
+    "ts": "2025-09-01T21:44:28.382966"
+  },
+  {
+    "id": "5c54feb0-f896-4b3b-8a41-070d22a9b58b",
+    "action": "nvidia-smi",
+    "args": {},
+    "requested_by": 6520801941,
+    "status": "approved",
+    "ts": "2025-09-06T04:14:49.255869",
+    "updated_ts": "2025-09-06T04:15:40.597445"
+  },
+  {
+    "id": "1a308f16-f22c-41aa-822d-84821f92c131",
+    "action": "which",
+    "args": {},
+    "requested_by": 6520801941,
+    "status": "pending",
+    "ts": "2025-09-06T04:16:25.384418"
+  },
+  {
+    "id": "369d8eef-7362-4480-97c8-7904a1a7d190",
+    "action": "cat",
+    "args": {},
+    "requested_by": 6520801941,
+    "status": "approved",
+    "ts": "2025-09-06T04:17:45.799831",
+    "updated_ts": "2025-09-06T04:18:40.183246"
+  },
+  {
+    "id": "32f9af85-913b-4ed7-b7b3-a80805f9907d",
+    "action": "uname",
+    "args": {},
+    "requested_by": 6520801941,
+    "status": "approved",
+    "ts": "2025-09-06T04:19:16.612763",
+    "updated_ts": "2025-09-06T04:19:43.006763"
+  },
+  {
+    "id": "72546a8e-f409-48d5-a9b8-f289f1721422",
+    "action": "cat",
+    "args": {},
+    "requested_by": 6520801941,
+    "status": "pending",
+    "ts": "2025-09-06T04:20:21.600841"
+  },
+  {
+    "id": "09941cdf-40f7-4cc8-9c53-01d8b4d63589",
+    "action": "cat",
+    "args": {},
+    "requested_by": 6520801941,
+    "status": "approved",
+    "ts": "2025-09-06T04:20:43.854107",
+    "updated_ts": "2025-09-06T04:21:14.088104"
+  },
+  {
+    "id": "d029dd68-1fe3-49da-9739-b62a89ad669f",
+    "action": "open",
+    "args": {},
+    "requested_by": 5935892442,
+    "status": "approved",
+    "ts": "2025-09-11T21:58:50.014831",
+    "updated_ts": "2025-09-11T22:34:59.020821"
+  },
+  {
+    "id": "b1a6b18b-6100-40ec-8510-a28cacfa33b6",
+    "action": "run",
+    "args": {},
+    "requested_by": 5935892442,
+    "status": "approved",
+    "ts": "2025-09-11T22:36:04.747546",
+    "updated_ts": "2025-09-11T22:37:02.656255"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "test_name": "Live_Telegram_Testing",
+  "test_id": "Live_Telegram_Testing_2_1757717815427",
+  "phase": 2,
+  "timestamp": "2025-09-12T18:57:59.787885",
+  "duration": 64.36018490791321,
+  "stdout": "Test started: Live_Telegram_Testing\nSystem state captured at 2025-09-12T18:56:55.429083\nTest completed: PASS\nDetails: Comprehensive test passed: 0/14 active (0.0%), 0/7 categories working",
+  "stderr": "",
+  "exit_code": 0,
+  "exception_trace": null,
+  "system_info": {
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python_version": "3.11.0rc1",
+    "architecture": [
+      "64bit",
+      "ELF"
+    ],
+    "hostname": "DESKTOP-JF1IJKS",
+    "timestamp": "2025-09-12T18:56:55.428798",
+    "working_directory": "/home/dateria/project",
+    "project_root": "/home/dateria/project"
+  },
+  "file_hashes": {
+    "main_api.py": "86504e128b4ea51539e9e6936f29f0c44d0eb5e7ee373a537d292e099fae2e6e",
+    "bots/telegram_bot.py": "247c35f5b639757f7098ab28c4fc7ae87344272e2b16e0f2e829004e183de321",
+    "rag_store.py": "ecc16e8d12076aa90d7a41dc0bf09e2d5843c017a284e80788fbd3e229c60c49",
+    "model_chat.py": "b9d609dc76ef82c50fca895e5fd2e18fc3f648ef082eefad0edddf4cf7820f6f",
+    "model_code.py": "fa46544b2f422fa9234f526000ef476b3dfe5541f404ba0054a022f7b5a962af",
+    "memory.db": "1a76ff1731e64929ea93f33c0f156351c277a127a36c149ba1ef458002424e8f"
+  },
+  "database_state": {
+    "status": "OK",
+    "tables": [
+      "sessions",
+      "memory",
+      "cache",
+      "routing_logs"
+    ],
+    "row_counts": {
+      "sessions": 15,
+      "memory": 9,
+      "cache": 2,
+      "routing_logs": 17
+    },
+    "file_size": 98304
+  },
+  "test_artifacts": {
+    "test_result": {
+      "success": true,
+      "details": "Comprehensive test passed: 0/14 active (0.0%), 0/7 categories working",
+      "test_function": "_test_live_telegram_bot"
+    }
+  },
+  "screenshots": [],
+  "verifier_version": "2.0.0",
+  "evidence_hash": "6f4f1eb390e52cc6c54193bb1c5f6e646ff9b01f062560fd88bd8c6185023aa8"
+}

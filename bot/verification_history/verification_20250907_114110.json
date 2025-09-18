@@ -1,0 +1,121 @@
+{
+  "timestamp": "2025-09-07T11:41:10.768261",
+  "verification_type": "universal",
+  "verifier_version": "2.0.0",
+  "summary": {
+    "total_tests": 6,
+    "passed_tests": 0,
+    "success_rate": 0.0,
+    "overall_status": "VERIFIED_FAIL",
+    "phase_breakdown": {
+      "2": {
+        "total": 6,
+        "passed": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "name": "File_Structure",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 0.24009999999999992,
+      "details": "Files checked: 6, Missing: 0",
+      "evidence_id": "File_Structure_2_1757270448126",
+      "evidence_hash": "18d2cddc3af474edef945bd41118dd3aabdb1864b0fbe74d877ebb9d0937b6c5",
+      "verifier_signature": "3925e6e96f978e53381f0453b2ed065b999fe527abb913210be8a065daa5df02",
+      "violations": [
+        "Required database table missing: memory",
+        "Required database table missing: cache",
+        "Required database table missing: sessions",
+        "Required database table missing: routing_logs"
+      ],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 57c78bc7c967556b...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ..."
+    },
+    {
+      "name": "Database_Schema",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 0.24009999999999992,
+      "details": "Database access error: database is locked",
+      "evidence_id": "Database_Schema_2_1757270451460",
+      "evidence_hash": "cd1dc80b5bd0e130f3606f07ce7f94e3d3b428670fa9ab3401535b2671a959e5",
+      "verifier_signature": "19ecca47f9df2ef0a93031268961324a3730c3f929ec57b6fe9c0178835242dc",
+      "violations": [
+        "Required database table missing: memory",
+        "Required database table missing: cache",
+        "Required database table missing: sessions",
+        "Required database table missing: routing_logs"
+      ],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 57c78bc7c967556b...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ..."
+    },
+    {
+      "name": "Routing_Logic",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 0.24009999999999992,
+      "details": "Test cases: 3, Passed: 3",
+      "evidence_id": "Routing_Logic_2_1757270457861",
+      "evidence_hash": "394ade2301e8ec818845a7702f7b432e1de821c5010205e0e9bb7d497162ce9f",
+      "verifier_signature": "70aae0343cbf190fb59b21f3acfea94e477bceb88f76baa54620105ce053333c",
+      "violations": [
+        "Required database table missing: memory",
+        "Required database table missing: cache",
+        "Required database table missing: sessions",
+        "Required database table missing: routing_logs"
+      ],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 57c78bc7c967556b...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ..."
+    },
+    {
+      "name": "Response_Cleaning",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 0.24009999999999992,
+      "details": "Cleaning cases: 4, Passed: 4",
+      "evidence_id": "Response_Cleaning_2_1757270461109",
+      "evidence_hash": "81d5711cf19b69f021294f144fbb43947df6d565cdfc012026defeab099c03c6",
+      "verifier_signature": "4a57f1f74a61d490622444961da51e870529e77e6a91a8e5579c2fecb5da2061",
+      "violations": [
+        "Required database table missing: memory",
+        "Required database table missing: cache",
+        "Required database table missing: sessions",
+        "Required database table missing: routing_logs"
+      ],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 57c78bc7c967556b...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ..."
+    },
+    {
+      "name": "API_Structure",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 0.24009999999999992,
+      "details": "API structure check error: 'charmap' codec can't decode byte 0x8f in position 3383: character maps to <undefined>",
+      "evidence_id": "API_Structure_2_1757270464320",
+      "evidence_hash": "4736016c73a56493f5b8c235ba6e09b4587cdd15aeeacb061a838c4574c82a92",
+      "verifier_signature": "6842a06cc1c813551bddeac99c2297059dc048f40694a6c65053cd2f0065ac74",
+      "violations": [
+        "Required database table missing: memory",
+        "Required database table missing: cache",
+        "Required database table missing: sessions",
+        "Required database table missing: routing_logs"
+      ],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 57c78bc7c967556b...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ..."
+    },
+    {
+      "name": "Telegram_Bot",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 0.24009999999999992,
+      "details": "Issues found: Missing imports: telebot, requests; Missing commands: /help",
+      "evidence_id": "Telegram_Bot_2_1757270467558",
+      "evidence_hash": "6fbc2ca89aa211205bb1144c8e759795eeea057bd506d7f30a9aa32ce65ebdd4",
+      "verifier_signature": "3900da8cc10d9f9053977428f5c99a2a78076291e61f24502238701d6b86e24d",
+      "violations": [
+        "Required database table missing: memory",
+        "Required database table missing: cache",
+        "Required database table missing: sessions",
+        "Required database table missing: routing_logs"
+      ],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 57c78bc7c967556b...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ..."
+    }
+  ]
+}

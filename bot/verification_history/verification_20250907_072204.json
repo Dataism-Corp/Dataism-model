@@ -1,0 +1,72 @@
+{
+  "timestamp": "2025-09-07T07:22:04.649763",
+  "verification_type": "evidence_based_core",
+  "verifier_version": "2.0.0",
+  "evidence_system_available": true,
+  "summary": {
+    "total_tests": 4,
+    "passed_tests": 0,
+    "failed_tests": 4,
+    "success_rate": 0.0,
+    "overall_status": "VERIFIED_FAIL"
+  },
+  "results": [
+    {
+      "name": "File Structure",
+      "status": "FAIL",
+      "confidence": 0.9,
+      "details": "Files checked: 9, Missing: 0",
+      "evidence_id": "File Structure_1757254924375",
+      "evidence_hash": "9d565c8807aa19a28ab2690a138ea4e61e687fd87ff4b7944e0da6832a74b925",
+      "verifier_signature": "5685ce289424e9e67f18de61776c1d7004281328627dae44720e606797b9d968",
+      "violations": [
+        "Python version 3.11.0rc1 does not meet requirement 3.8"
+      ],
+      "verification_log": ""
+    },
+    {
+      "name": "Database Schema",
+      "status": "FAIL",
+      "confidence": 0.21608999999999995,
+      "details": "Tables found: 4, Required: 4",
+      "evidence_id": "Database Schema_1757254924475",
+      "evidence_hash": "ad75b25b17d20dce8d34aa17fb43499315f30f6088ff3e7f52a6063fc019f27c",
+      "verifier_signature": "b6447555bb95725027e09182df6526fd70da7e49a4184f7aa2889077a88023ff",
+      "violations": [
+        "Python version 3.11.0rc1 does not meet requirement 3.8",
+        "Required database table missing: {'name': 'memory', 'description': 'RAG document storage', 'required_columns': ['id', 'session_id', 'content', 'emb']}",
+        "Required database table missing: {'name': 'cache', 'description': 'API response caching', 'required_columns': ['key', 'payload', 'ttl']}",
+        "Required database table missing: {'name': 'sessions', 'description': 'Chat session storage', 'required_columns': ['session_id', 'role', 'content']}",
+        "Required database table missing: {'name': 'routing_logs', 'description': 'Smart routing analytics', 'required_columns': ['user_text', 'selected_tool', 'confidence']}"
+      ],
+      "verification_log": ""
+    },
+    {
+      "name": "Routing Logic",
+      "status": "FAIL",
+      "confidence": 0.45,
+      "details": "Test cases: 5, Passed: 5",
+      "evidence_id": "Routing Logic_1757254924532",
+      "evidence_hash": "018cb228ebc13f8aed0a8a99f3e42dd6c4845d1733c25470f7c1535b4d1d7835",
+      "verifier_signature": "d79451c73170ceb4ed14bf9ef870bb592ebb1c6b25e495c4d65fe47c3c8269ca",
+      "violations": [
+        "Python version 3.11.0rc1 does not meet requirement 3.8",
+        "No routing test results found in artifacts"
+      ],
+      "verification_log": ""
+    },
+    {
+      "name": "Response Cleaning",
+      "status": "FAIL",
+      "confidence": 0.9,
+      "details": "Cleaning cases: 5, Passed: 5",
+      "evidence_id": "Response Cleaning_1757254924586",
+      "evidence_hash": "bb0844913db5c08443d12f45d40c912f3c4e344123ace2a8cf6dc21b1ac62b30",
+      "verifier_signature": "88c8b7b00a88e63e32801cb9b8abc8b4ecf4c5cfa9bdff6f1008aa7ef8b57fb8",
+      "violations": [
+        "Python version 3.11.0rc1 does not meet requirement 3.8"
+      ],
+      "verification_log": ""
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-09-07T07:42:33.261080",
+  "verification_type": "universal",
+  "verifier_version": "2.0.0",
+  "summary": {
+    "total_tests": 5,
+    "passed_tests": 0,
+    "success_rate": 0.0,
+    "overall_status": "VERIFIED_FAIL",
+    "phase_breakdown": {
+      "2": {
+        "total": 5,
+        "passed": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "name": "File_Structure",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 0.24009999999999992,
+      "details": "Files checked: 6, Missing: 0",
+      "evidence_id": "File_Structure_2_1757256133847",
+      "evidence_hash": "729289c118fe46e680b9fc9c63aa2257d1a382b04413e6a52de004b2949588cc",
+      "verifier_signature": "a21f692208086f8c2fa4810f96de29a2ece1478c86f0396318b690e17953bf66",
+      "violations": [
+        "Required database table missing: {'name': 'memory', 'description': 'RAG document storage', 'required_columns': ['id', 'session_id', 'content', 'emb']}",
+        "Required database table missing: {'name': 'cache', 'description': 'API response caching', 'required_columns': ['key', 'payload', 'ttl']}",
+        "Required database table missing: {'name': 'sessions', 'description': 'Chat session storage', 'required_columns': ['session_id', 'role', 'content']}",
+        "Required database table missing: {'name': 'routing_logs', 'description': 'Smart routing analytics', 'required_columns': ['user_text', 'selected_tool', 'confidence']}"
+      ],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 57c78bc7c967556b...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ..."
+    },
+    {
+      "name": "Database_Schema",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 0.24009999999999992,
+      "details": "Database access error: database is locked",
+      "evidence_id": "Database_Schema_2_1757256137187",
+      "evidence_hash": "06fa31165811fc57e2eaf8596b75579605ed1d21c2bb1d79fc3c9cee0ede36cd",
+      "verifier_signature": "a3657fee63ec1bebf23a6b787eb10dff7a6ccd2d9ffb807c85690d04f11c3a9d",
+      "violations": [
+        "Required database table missing: {'name': 'memory', 'description': 'RAG document storage', 'required_columns': ['id', 'session_id', 'content', 'emb']}",
+        "Required database table missing: {'name': 'cache', 'description': 'API response caching', 'required_columns': ['key', 'payload', 'ttl']}",
+        "Required database table missing: {'name': 'sessions', 'description': 'Chat session storage', 'required_columns': ['session_id', 'role', 'content']}",
+        "Required database table missing: {'name': 'routing_logs', 'description': 'Smart routing analytics', 'required_columns': ['user_text', 'selected_tool', 'confidence']}"
+      ],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 57c78bc7c967556b...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ..."
+    },
+    {
+      "name": "Routing_Logic",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 0.24009999999999992,
+      "details": "Test cases: 3, Passed: 3",
+      "evidence_id": "Routing_Logic_2_1757256143597",
+      "evidence_hash": "00891d67852e8cf5dbbafe5a5966c4f7636da93e00e0f37caf5f660051ec0ae0",
+      "verifier_signature": "917409fe31f8b6e7abcb12e5808e1f879192e35569bf58ad131b30a30d177113",
+      "violations": [
+        "Required database table missing: {'name': 'memory', 'description': 'RAG document storage', 'required_columns': ['id', 'session_id', 'content', 'emb']}",
+        "Required database table missing: {'name': 'cache', 'description': 'API response caching', 'required_columns': ['key', 'payload', 'ttl']}",
+        "Required database table missing: {'name': 'sessions', 'description': 'Chat session storage', 'required_columns': ['session_id', 'role', 'content']}",
+        "Required database table missing: {'name': 'routing_logs', 'description': 'Smart routing analytics', 'required_columns': ['user_text', 'selected_tool', 'confidence']}"
+      ],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 57c78bc7c967556b...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ..."
+    },
+    {
+      "name": "Response_Cleaning",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 0.24009999999999992,
+      "details": "Cleaning cases: 3, Passed: 2",
+      "evidence_id": "Response_Cleaning_2_1757256146824",
+      "evidence_hash": "725e70a1cbe46267a8c515ae86a9f98eef5a7ce9c4971f38dfb301cc4828c9f0",
+      "verifier_signature": "0ec989eadd3b8cce43b2afe0edd54117bd5af123532d892302178a70cc3deeeb",
+      "violations": [
+        "Required database table missing: {'name': 'memory', 'description': 'RAG document storage', 'required_columns': ['id', 'session_id', 'content', 'emb']}",
+        "Required database table missing: {'name': 'cache', 'description': 'API response caching', 'required_columns': ['key', 'payload', 'ttl']}",
+        "Required database table missing: {'name': 'sessions', 'description': 'Chat session storage', 'required_columns': ['session_id', 'role', 'content']}",
+        "Required database table missing: {'name': 'routing_logs', 'description': 'Smart routing analytics', 'required_columns': ['user_text', 'selected_tool', 'confidence']}"
+      ],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 57c78bc7c967556b...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ..."
+    },
+    {
+      "name": "API_Structure",
+      "phase": 2,
+      "status": "FAIL",
+      "confidence": 0.24009999999999992,
+      "details": "API structure check error: 'charmap' codec can't decode byte 0x8f in position 3383: character maps to <undefined>",
+      "evidence_id": "API_Structure_2_1757256150042",
+      "evidence_hash": "8d988731f3fea552c3317c1b028cefdeacac3117b5ed7d9c4858b111b03ef10c",
+      "verifier_signature": "160636d09899db7d33dcbb587c8948ece66cec6f05317064915cdbfa81763543",
+      "violations": [
+        "Required database table missing: {'name': 'memory', 'description': 'RAG document storage', 'required_columns': ['id', 'session_id', 'content', 'emb']}",
+        "Required database table missing: {'name': 'cache', 'description': 'API response caching', 'required_columns': ['key', 'payload', 'ttl']}",
+        "Required database table missing: {'name': 'sessions', 'description': 'Chat session storage', 'required_columns': ['session_id', 'role', 'content']}",
+        "Required database table missing: {'name': 'routing_logs', 'description': 'Smart routing analytics', 'required_columns': ['user_text', 'selected_tool', 'confidence']}"
+      ],
+      "verification_log": "File main_api.py verified: 2bd824f1803fc44a...\nFile bots/telegram_bot.py verified: 57c78bc7c967556b...\nFile rag_store.py verified: ecc16e8d12076aa9...\nFile model_chat.py verified: 154d678a18d676e8...\nFile model_code.py verified: ca8b940f0729b521...\nFile tools/apis.py verified: ...\nFile tools/kill.py verified: ..."
+    }
+  ]
+}

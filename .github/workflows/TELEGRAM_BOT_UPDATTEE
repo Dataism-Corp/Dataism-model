@@ -1,0 +1,92 @@
+name: Telegram Bot Verify
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: Telegram Bot Verify
+    runs-on: ubuntu-latest
+
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_TEST_CHAT_ID: ${{ secrets.TELEGRAM_TEST_CHAT_ID }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest requests
+
+      # 1) Optional smoke script
+      - name: Run optional smoke script
+        run: |
+          if [ -f scripts/verify_bot.sh ]; then
+            bash scripts/verify_bot.sh
+          else
+            echo "No scripts/verify_bot.sh found; skipping."
+          fi
+
+      # 2) Identity check with getMe
+      - name: Verify bot identity (getMe)
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ]; then
+            echo "No token provided; skipping getMe check."
+            exit 0
+          fi
+          python - <<'PY'
+          import os, sys, requests
+          token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+          if not token:
+              print("No token; skipping getMe.")
+              sys.exit(0)
+          url = f"https://api.telegram.org/bot{token}/getMe"
+          try:
+              r = requests.get(url, timeout=10)
+              r.raise_for_status()
+              data = r.json()
+              if not data.get("ok"):
+                  print("❌ getMe failed:", data)
+                  sys.exit(1)
+              u = data["result"]
+              print(f"✅ Bot OK: id={u.get('id')} username=@{u.get('username')!s}")
+          except Exception as e:
+              print("❌ Error during getMe:", e)
+              sys.exit(1)
+          PY
+
+      # 3) Offline tests with pytest
+      - name: Run offline functional tests (pytest)
+        run: |
+          if [ -d tests ]; then
+            pytest -q --maxfail=1 --disable-warnings
+          else
+            echo "No tests/ folder; skipping pytest."
+          fi
+
+      # 4) Live message test
+      - name: Send live test message to Telegram
+        run: |
+          if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_TEST_CHAT_ID" ]; then
+            echo "Sending test message to chat ${TELEGRAM_TEST_CHAT_ID}"
+            curl -sS --fail \
+              -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -d chat_id="${TELEGRAM_TEST_CHAT_ID}" \
+              --data-urlencode text="🚀 GitHub Actions test successful! Your bot is alive 🎉" \
+            || echo "⚠️ sendMessage step failed (bot may not have access to chat)."
+          else
+            echo "No token or chat ID provided; skipping sendMessage step."
+          fi

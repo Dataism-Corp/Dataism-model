@@ -1,0 +1,73 @@
+name: Telegram Bot Verify
+
+on:
+  pull_request:
+    paths:
+      - "bot/**"
+      - "scripts/**"
+      - "requirements*.txt"
+      - ".github/workflows/telegram-bot-verify.yml"
+      - "tests/**"
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: Telegram Bot Verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest requests
+
+      # 1) Smoke test
+      - name: Run bot smoke test
+        run: bash scripts/verify_bot.sh
+
+      # 2) Verify token works (getMe)
+      - name: Verify Telegram bot identity
+        if: ${{ secrets.TELEGRAM_BOT_TOKEN != '' }}
+        run: |
+          python - <<'PY'
+          import os, requests, sys
+          token = os.getenv("TELEGRAM_BOT_TOKEN")
+          if not token:
+              print("No token provided, skipping check.")
+              sys.exit(0)
+
+          url = f"https://api.telegram.org/bot{token}/getMe"
+          r = requests.get(url, timeout=10)
+          r.raise_for_status()
+          data = r.json()
+          if not data.get("ok"):
+              print("❌ getMe failed:", data)
+              sys.exit(1)
+          u = data["result"]
+          print(f"✅ Bot OK: id={u.get('id')} username=@{u.get('username')}")
+          PY
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+
+      # 3) Offline functional tests
+      - name: Run offline functional tests
+        run: pytest -q --maxfail=1 --disable-warnings
+
+      # 4) LIVE outbound check - send a message to test chat
+      - name: Send test message to Telegram
+        if: ${{ secrets.TELEGRAM_BOT_TOKEN != '' && secrets.TELEGRAM_TEST_CHAT_ID != '' }}
+        run: |
+          curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage \
+            -d chat_id=${{ secrets.TELEGRAM_TEST_CHAT_ID }} \
+            -d text="✅ GitHub Actions test successful! Your bot is alive 🚀"

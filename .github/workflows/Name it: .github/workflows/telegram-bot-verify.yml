@@ -1,0 +1,65 @@
+name: Telegram Bot Verify
+
+on:
+  pull_request:
+    paths:
+      - "bot/**"
+      - "scripts/**"
+      - "requirements*.txt"
+      - ".github/workflows/telegram-bot-verify.yml"
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: Telegram Bot Verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      # --- Smoke test: no secrets needed, quick correctness check
+      - name: Run bot smoke test
+        run: |
+          bash scripts/verify_bot.sh
+
+      # --- Optional live test: requires TELEGRAM_BOT_TOKEN secret
+      - name: Live functionality check (optional)
+        if: ${{ secrets.TELEGRAM_BOT_TOKEN != '' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          # Example: run a short, safe live check. Adjust to your repo.
+          python - <<'PY'
+          import os, sys, time
+          token = os.getenv("TELEGRAM_BOT_TOKEN")
+          if not token:
+              print("No token provided; skipping live check.")
+              sys.exit(0)
+          # TODO: import your bot module and start it in a short-lived mode,
+          # or call a function that hits Telegram getMe() to verify the token.
+          print("Live check placeholder (replace with getMe() or health ping).")
+          PY
+
+      - name: Upload logs (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bot-verify-logs
+          path: |
+            ./**/*.log
+            ./logs/**
+            ./**/pytest*.xml
+          if-no-files-found: ignore

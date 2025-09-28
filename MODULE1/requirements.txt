@@ -1,0 +1,14 @@
+chromadb==0.5.5
+sentence-transformers==3.0.1
+torch>=2.1
+transformers>=4.41
+rank-bm25==0.2.2
+pypdf==4.2.0
+docx2txt==0.8
+markdown==3.6
+beautifulsoup4==4.12.3
+pandas==2.2.2
+numpy==1.26.4
+tqdm==4.66.4
+python-dateutil==2.9.0.post0
+PyYAML==6.0.1

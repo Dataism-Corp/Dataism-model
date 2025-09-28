@@ -1,0 +1,15 @@
+name: GPU Check
+
+on:
+  workflow_dispatch:   # lets you trigger manually from GitHub
+
+jobs:
+  check-gpu:
+    runs-on: self-hosted
+    steps:
+      - name: Show system info
+        run: uname -a
+
+      - name: Check GPU availability
+        run: |
+          nvidia-smi || echo "No NVIDIA GPU detected"

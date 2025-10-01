@@ -1,47 +1,38 @@
-
-# app/api.py
-# Simple REST API for Phase 2 foundation
-
-from fastapi import FastAPI
+import os
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from typing import List, Dict, Any
 
-# import core chat + memory helpers
-from .core import chat, get_memory  # type: ignore
+app = FastAPI()
 
-app = FastAPI(title="Dateria Core API", version="0.1.0")
+# Load model paths from environment
+QWEN_BASE_DIR = os.getenv("QWEN_BASE_DIR")
+QWEN_CODE_DIR = os.getenv("QWEN_CODE_DIR")
 
-class ChatIn(BaseModel):
-    message: str
+# Register available models
+MODELS = {
+    "Qwen2.5-14B-Instruct": QWEN_BASE_DIR,
+    "Qwen2.5-Coder-14B": QWEN_CODE_DIR
+}
 
-class ChatOut(BaseModel):
-    reply: str
+# Request schema
+class GenerateRequest(BaseModel):
+    prompt: str
+    model: str
 
 @app.get("/health")
-def health() -> Dict[str, Any]:
+def health():
     return {"status": "ok"}
 
-@app.post("/chat", response_model=ChatOut)
-def chat_endpoint(body: ChatIn):
-    reply = chat(body.message)
-    return {"reply": reply}
+@app.get("/models")
+def list_models():
+    return {"models": list(MODELS.keys())}
 
-@app.get("/memory")
-def memory() -> List[Dict[str, Any]]:
-    return get_memory()
-
-@app.post("/reset")
-def reset_memory():
-    """
-    Clears conversation memory.
-    If reset function exists in core, use it; otherwise fall back to clearing list.
-    """
-    try:
-        # optional: if you add reset_memory() in core.py later
-        from .core import reset_memory as do_reset  # type: ignore
-        do_reset()
-    except Exception:
-        # fallback: try to clear the list directly
-        from .core import conversation_history  # type: ignore
-        conversation_history.clear()
-    return {"status": "cleared"}
+@app.post("/generate")
+def generate(req: GenerateRequest):
+    if req.model not in MODELS:
+        raise HTTPException(status_code=404, detail="Model Not Found")
+    # placeholder response (later we’ll load the real model here)
+    return {
+        "model": req.model,
+        "output": f"[fake output from {req.model}] Prompt was: {req.prompt}"
+    }

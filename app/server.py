@@ -1,18 +1,20 @@
 from fastapi import FastAPI
-from app import api
+from pydantic import BaseModel
 
 app = FastAPI()
 
+# Health check endpoint
 @app.get("/health")
-async def health():
+def health():
     return {"status": "ok"}
 
-@app.get("/models")
-async def list_models():
-    # Later we’ll make this dynamic, for now it’s hardcoded
-    return {"models": ["Qwen2.5-14B-Instruct", "Qwen2.5-Coder-14B"]}
+# Example input model
+class Query(BaseModel):
+    text: str
 
-@app.post("/generate")
-async def generate(input_text: str):
-    # This will call the api.py logic
-    return api.run_model(input_text)
+# Example model run endpoint
+@app.post("/run")
+def run_model(query: Query):
+    # For now just echo the input text
+    # Later this will call your real model logic
+    return {"response": f"You sent: {query.text}"}

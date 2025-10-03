@@ -1,0 +1,44 @@
+enabled: true
+
+paths:
+  index_dir: ./data/index           # Chroma (or other) vector index for memories
+  backups_dir: ./data/backups       # JSON exports
+  events_log: ./observability/events.log
+
+top_k_recall: 8                      # max memory cards injected per turn
+recency_days: 90                     # default recency filter (preferences ignore)
+
+scoring:
+  alpha_similarity: 0.6
+  beta_recency: 0.3
+  gamma_uses: 0.1
+
+writer_policy:
+  max_cards_per_turn: 3
+  allow_types: [preference, decision, fact, task, profile, note]
+  deny_sensitive: true               # redact secrets if detected
+  max_value_chars: 512
+
+ttl_days:                            # null means no expiry
+  preference: null
+  decision: 180
+  fact: 365
+  task: 30
+  note: 90
+  profile: 365
+
+controls:
+  allow_export: true
+  allow_purge: true
+
+# --- Memory extraction via LLM ---
+extraction:
+  enabled: true
+  model_dir: ~/models/Qwen2.5-14B-Instruct     # your local Qwen path
+  max_new_tokens: 256
+  temperature: 0.1
+  top_p: 0.9
+  # guardrails
+  allow_types: ["preference", "fact", "decision", "plan"]
+  max_cards_per_turn: 5
+  drop_if_contains: ["password", "secret", "api key", "ssn", "credit card"]  # simple PII guard
